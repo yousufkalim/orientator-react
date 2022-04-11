@@ -5,15 +5,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { TextField, Checkbox, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Store, UpdateStore } from "../StoreContext";
 import Grid from "@material-ui/core/Grid";
-import Dummy from "../assets/img/dummy.png";
-import MainMobile from "../assets/img/mobileform.png";
 import veryExcited from "../assets/img/VeryExcited.png";
 import arrowleft from "../assets/img/arrow2.png";
 import scrollToTop from "../utils/ScrollTop";
@@ -22,6 +19,7 @@ import ConfirmationPopup from "./ConfirmationPopup";
 import enGb from "date-fns/locale/fr";
 import { registerLocale } from "react-datepicker";
 import api from "../api";
+import { Helmet } from "react-helmet";
 
 let education = [
   "Quatrième",
@@ -47,9 +45,9 @@ let education = [
   "Terminale STHR",
   "Terminale STAV",
 ];
-// const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
 const days = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"];
-// const days = ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
+
 const months = [
   "Janvier",
   "Février",
@@ -457,7 +455,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
   // onChange Function for Input Field
   const onChangeCountry = (e) => {
-    console.log("onchange", e.target.value);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -473,7 +470,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
   };
   const handleChangecountry = (event, value) => {
     setFormData({ ...formData, country: value?.name });
-    console.log("addess", value.name);
     if (value.name == "France") {
       setAddressValue({
         ...addressValue,
@@ -566,7 +562,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
       });
     }
   };
-  console.log("add", address);
   // handleSubmit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -606,10 +601,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
       return toast.error("Veuillez accepter les termes et conditions");
     }
     if (country == "France") {
-      console.log("france", {
-        ...formData,
-        addressValue,
-      });
       setLoading(true);
       setresendLoading(true);
       let res = await api("post", "/users/create", {
@@ -632,10 +623,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
         setresendLoading(false);
       }, 30000);
     } else {
-      console.log("other country", {
-        ...formData,
-        customeAddress: customeAddress + " " + country,
-      });
       setLoading(true);
       setresendLoading(true);
       let res = await api("post", "/users/create", {
@@ -659,24 +646,12 @@ const UserForm = ({ setStep, setActiveStep }) => {
         setresendLoading(false);
       }, 30000);
     }
-
-    // if (!accept_condition2) {
-    //   return toast.error(
-    //     "Merci d'accepter les conditions pour démarrer le test"
-    //   );
-    // }
-    // setLoading(true);
-    // let res = await api("post", "/users/create", {
-    //   ...formData,
-    //   address: addressValue,
-    // });
-    // if (res.status === 200) {
-    //   SetconfirmationOpen(true);
-    // }
-    // setLoading(false);
   };
   return (
     <>
+      <Helmet>
+        <link rel="preload" as="image" href={veryExcited} />
+      </Helmet>
       <Grid container spacing={2} className="mainuserform">
         {imgloading && (
           <div className="formloading">
@@ -847,9 +822,6 @@ const UserForm = ({ setStep, setActiveStep }) => {
                       variant="outlined"
                       className="selectformControl"
                     >
-                      {/* <InputLabel id="demo-simple-select-outlined-label">
-                    {education_level ? "clsse" : " classe "}
-                  </InputLabel> */}
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
@@ -965,19 +937,7 @@ const UserForm = ({ setStep, setActiveStep }) => {
                     J’accepte les termes et les conditions
                   </span>
                 </Grid>
-                {/* <Grid container spacing={1} className="termsandconditionGrid">
-                  <Checkbox
-                    inputProps={{ "aria-label": "secondary checkbox" }}
-                    style={{ color: "white" }}
-                    name="accept_condition2"
-                    value={accept_condition2}
-                    onChange={onChange}
-                  />
-                  <span className="termsandcondition">
-                    J'accepte que mes données soient transmises à des
-                    partenaires d'Orientator
-                  </span>
-                </Grid> */}
+
                 <Grid container spacing={2} className="formbuttonsGrid">
                   <Grid xs={12} sm={4}>
                     <div

@@ -16,7 +16,6 @@ import moment from "moment";
 
 export default function ArticleBody({ singlBlog, loading, blogs }) {
   const { id } = useParams();
-  console.log("id in articl body", id);
   function htmlfile() {
     return {
       __html: `

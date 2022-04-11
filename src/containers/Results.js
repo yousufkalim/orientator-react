@@ -46,7 +46,6 @@ const Results = () => {
       "get",
       `admin/results/get-results?pageNumber=${page}&pageSize=${rowsPerPage}`
     );
-    console.log("resis", results);
 
     if (res) {
       updateStore({ results: res?.data?.results });

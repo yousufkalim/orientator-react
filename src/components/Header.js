@@ -29,7 +29,7 @@ export default function Header({
   setStatetextforscroll,
 }) {
   const history = useHistory();
-  console.log("history", history);
+
   const classes = useStyles();
   const [flag, setFlag] = useState(false);
   // Show navbar when page is scorlled upto given distance
@@ -69,7 +69,6 @@ export default function Header({
             color="inherit"
             aria-label="menu"
             onClick={() => {
-              console.log("aa");
               setFlag(!flag);
             }}
           >
@@ -105,7 +104,6 @@ export default function Header({
                 padding: "15px 25px 0 0",
               }}
             >
-              {console.log("step issss", step, flag)}
               <Typography
                 className={flag ? "title a" : "hidetitle a"}
                 onClick={() => {
@@ -134,7 +132,7 @@ export default function Header({
                   step != 0 && setStep(0);
                   step != 0 && setActiveStep(1);
                   setStatetextforscroll("Comment");
-                  console.log("aaalhlbkbbi");
+
                   history.push("/", "Comment");
                 }}
               >
@@ -145,6 +143,17 @@ export default function Header({
               className="BlogMobileView"
               style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
             >
+              {/* <Link
+                to="/channel"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginRight: "30px",
+                }}
+                className={flag ? "title c" : "hidetitle c"}
+              >
+                Vidéos
+              </Link> */}
               <Link
                 to="/blog"
                 style={{ color: "white", textDecoration: "none" }}

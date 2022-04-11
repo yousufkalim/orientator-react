@@ -6,6 +6,7 @@ import CGU from "../containers/CGU";
 import Confidential from "../containers/Confidential";
 import MentionsLegal from "../containers/MentionsLegal";
 import Blog from "../containers/Blog";
+import Videos from "../containers/Videos";
 import Article from "../containers/Article";
 import Admin from "./Admin";
 
@@ -18,6 +19,7 @@ const index = () => {
       <Route exact path="/confidentialite" component={Confidential} />
       <Route exact path="/MentionsLegal" component={MentionsLegal} />
       <Route exact path="/blog" component={Blog} />
+      {/* <Route exact path="/channel" component={Videos} /> */}
       <Route exact path="/blog/:id" component={Article} />
       <Route exact path="/*" render={() => <Admin />} />
     </Switch>

@@ -26,10 +26,6 @@ export default function LatestArticle({ blogs, loading, setLoading }) {
                 }}
                 style={{ textDecoration: "none", cursor: "pointer" }}
               >
-                {console.log(
-                  "proce",
-                  process.env.REACT_APP_baseURL + blogs[0]?.blog_images
-                )}
                 <div className="latestArticleLeft">
                   <img
                     // src={blogImg}

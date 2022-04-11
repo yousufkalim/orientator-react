@@ -3,20 +3,16 @@ import { Store, UpdateStore } from "../StoreContext";
 import api from "../api";
 import Grid from "@material-ui/core/Grid";
 import MainCharacter from "../assets/img/MainCharacter.png";
-import MainMobile from "../assets/img/mobileform.png";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import TypeOfCourse from "./TypeOfCourse";
 import userimg from "../assets/icons/user.png";
 import share from "../assets/icons/share.png";
-import Dialog from "./Dialog";
 import InvitePopup from "./InvitePopup";
 import SharePopup from "./Sharepopup";
 import jsPDF from "jspdf";
 import * as html2canvas from "html2canvas";
 import logo from "../assets/img/logo1.png";
 const Result = () => {
-  let typeOfCourses = ["BTS", "BUT", "CPGE", "Ecole Post-Bac", "Licence"];
-
   // init
   const updateStore = UpdateStore();
   const {
@@ -101,10 +97,6 @@ const Result = () => {
     });
   };
 
-  // console.log("licenceResult", licenceResult[0].canvas, licenceResult[0].index);
-
-  console.log("useris", user);
-
   const exportPdf = async () => {
     setExportLoading(true);
     setTimeout(() => {
@@ -142,7 +134,11 @@ const Result = () => {
       {resultStep == 0 && (
         <Grid container spacing={2} className="mainresultscreen">
           <Grid item xs={12} sm={12} md={5} className="">
-            <img src={MainCharacter} className="facialImgQuestionforResult" alt="maincharacter"/>
+            <img
+              src={MainCharacter}
+              className="facialImgQuestionforResult"
+              alt="maincharacter"
+            />
           </Grid>
           <Grid item xs={12} sm={12} md={7} className="">
             <div
@@ -235,8 +231,6 @@ const Result = () => {
       )}
       {resultStep == 1 && (
         <>
-          {/* <Dialog open={open} setOpen={setOpen} /> */}
-
           <InvitePopup open={openinvitepopup} setOpen={setOpenInvitepopup} />
           <SharePopup open={opensharepopup} setOpen={setOpenSharepopup} />
           <Grid
