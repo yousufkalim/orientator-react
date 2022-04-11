@@ -143,7 +143,7 @@ export default function Header({
               className="BlogMobileView"
               style={{ width: "60%", textAlign: "right", marginTop: "10px" }}
             >
-              <Link
+              {/* <Link
                 to="/channel"
                 style={{
                   color: "white",
@@ -153,7 +153,7 @@ export default function Header({
                 className={flag ? "title c" : "hidetitle c"}
               >
                 Vidéos
-              </Link>
+              </Link> */}
               <Link
                 to="/blog"
                 style={{ color: "white", textDecoration: "none" }}
