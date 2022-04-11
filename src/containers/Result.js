@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Store, UpdateStore } from "../StoreContext";
-import Card from "../components/dashboard/Card";
 import TypeOfCourse from "../components/TypeOfCourse";
 import api from "../api";
 
@@ -71,9 +70,6 @@ const Result = () => {
                     )}
                   </>
                 ))}
-                {/* {singleUserResult?.courses.map((course) => (
-                  <Card course={course} /> 
-                ))} */}
               </div>
             ) : (
               <div className="cardflex" style={{ color: "white" }}>

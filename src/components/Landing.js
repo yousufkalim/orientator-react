@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Main from "../assets/img/a2.png";
 import MainCharacter from "../assets/img/MainCharacter.png";
-import VideoImage from "../assets/img/videoimg.png";
 import scrollToTop from "../utils/ScrollTop";
 import video1 from "../assets/video/orientatorVideo.mp4";
 import thumbnail from "../assets/img/thumbnail.jpg";
@@ -12,6 +11,7 @@ import CookiesPopup2 from "../utils/CookiesPopup2";
 import Contactus from "../utils/Contactus";
 import RefuserPopup from "../utils/RefuserPopup";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import f1 from "../assets/img/f1.png";
 import f2 from "../assets/img/f2.png";
@@ -99,13 +99,12 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
   useEffect(() => {
     video?.play();
     scrollToTop();
-    console.log("sssssssssssssss", state);
+
     statetextforscroll == "Accueil" && scrollToTop();
-    statetextforscroll == "Comment" ||
-      (state == "Comment" &&
-        setTimeout(() => {
-          scrollToTopforComment();
-        }, 50));
+    (statetextforscroll == "Comment" || state == "Comment") &&
+      setTimeout(() => {
+        scrollToTopforComment();
+      }, 50);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -122,6 +121,14 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="preload" as="image" href={Main} />
+        <link rel="preload" as="image" href={MainCharacter} />
+        <link rel="preload" as="image" href={arrowright} />
+        <link rel="preload" as="image" href={f1} />
+        <link rel="preload" as="image" href={f2} />
+        <link rel="preload" as="image" href={f3} />
+      </Helmet>
       <div className="main" id="top">
         <img src={Main} className="bodyimg forweb" />
         <img
@@ -139,7 +146,6 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
           </Grid>
           <Grid item xs={12} sm={3} className="body-rectangleGrid3">
             <div className="partibuttondiv">
-              {console.log("localStorage.cookies ", localStorage.cookies)}
               <button
                 className="partiButton"
                 onClick={() =>
@@ -165,16 +171,9 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
             autoplay={true}
             type="video/mp4"
             loop
-            // poster={VideoImage}
           />
-
-          {/* <img src={VideoImage} className="videImage" /> */}
         </div>
-        {/* <div className="desktopView goback">
-          <button className="goBackbutton" onClick={exportPdf}>
-            Exporter le PDF
-          </button>
-        </div> */}
+
         <Grid
           container
           spacing={3}

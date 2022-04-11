@@ -45,9 +45,6 @@ export default function ConfirmationPop({
       [e.target.name]: e.target.value,
     });
   };
-  const handleResend = () => {
-    console.log("formdata for resend", userformdata);
-  };
   const handleSubmitverify = async () => {
     setLoading(true);
 

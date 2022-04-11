@@ -14,6 +14,7 @@ import Info from "./Info";
 import useSound from "use-sound";
 import sound from "../assets/sound/sound.wav";
 import arrowleft from "../assets/img/arrow2.png";
+import { Helmet } from "react-helmet";
 
 const Questions = ({ setStep, setActiveStep }) => {
   const [play] = useSound(sound);
@@ -84,8 +85,6 @@ const Questions = ({ setStep, setActiveStep }) => {
     setCurrentAnswer(null);
     return play();
   };
-  console.log("history", history);
-  console.log("prevQuestion", prevQuestion);
 
   //it set the current answer which will be selected
   const currentans = () => {
@@ -201,6 +200,16 @@ const Questions = ({ setStep, setActiveStep }) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="preload" as="image" href={winkingFinal} />
+        <link rel="preload" as="image" href={encourageFinal} />
+        <link rel="preload" as="image" href={arrogantFinal} />
+        <link rel="preload" as="image" href={asthonisedFinal} />
+        <link rel="preload" as="image" href={thoughtfulFinal} />
+        <link rel="preload" as="image" href={victoriousFinal} />
+        <link rel="preload" as="image" href={qarrow} />
+        <link rel="preload" as="image" href={arrowleft} />
+      </Helmet>
       <Info anchorEl={anchorEl} setAnchorEl={setAnchorEl} text={text} />
       <Grid
         container

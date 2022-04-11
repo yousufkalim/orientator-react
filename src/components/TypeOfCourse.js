@@ -19,7 +19,6 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getresultpageforPdf = () => {
-    // console.log("type in type of courses", type);
     let domElement = document.getElementById(type);
     html2canvas(domElement, {
       // ignoreElements: function (element) {

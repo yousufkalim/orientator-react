@@ -15,49 +15,50 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
 }));
-export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,setData }) {
+export default function CookiesPopup({
+  open,
+  setOpen,
+  setOpenCookieePopup2,
+  data,
+  setData,
+}) {
   const { user } = Store();
-  
+
   const handleClose = () => {
     setOpen(false);
   };
-  const handleRefuse=(i)=>{
-    console.log("item",i)
-   let newitems= data.map(item =>
-    item.text === i.text
-        ? { ...item,refuse:true,accept:false }
-        : item
-    )
-    setData(newitems)
-  }
-  const handleAccept=(i)=>{
-   let newit= data.map(item =>
-    item.text === i.text
-        ? { ...item,refuse:false,accept:true }
-        : item
-    )
-    setData(newit)
-  }
-  const handleSavepopup=()=>{
-    let refuse=false
-    let accept=true
-    data.map(item=>{
-      if(item.refuse){
-        refuse=true
+  const handleRefuse = (i) => {
+    let newitems = data.map((item) =>
+      item.text === i.text ? { ...item, refuse: true, accept: false } : item
+    );
+    setData(newitems);
+  };
+  const handleAccept = (i) => {
+    let newit = data.map((item) =>
+      item.text === i.text ? { ...item, refuse: false, accept: true } : item
+    );
+    setData(newit);
+  };
+  const handleSavepopup = () => {
+    let refuse = false;
+    let accept = true;
+    data.map((item) => {
+      if (item.refuse) {
+        refuse = true;
       }
-      if(!item.accept){
-        accept=false
-      } 
-    })
-    if(refuse){
-       return setOpenCookieePopup2(true)
+      if (!item.accept) {
+        accept = false;
+      }
+    });
+    if (refuse) {
+      return setOpenCookieePopup2(true);
     }
-    if(accept){
-      localStorage.setItem("cookies", true)
+    if (accept) {
+      localStorage.setItem("cookies", true);
       setOpen(false);
     }
     setOpen(false);
-  }
+  };
   return (
     <div>
       <BootstrapDialog
@@ -73,35 +74,70 @@ export default function CookiesPopup({ open, setOpen,setOpenCookieePopup2,data,s
           <HorizontalRuleIcon fontSize="large" />
           {/* <img src={close} className="closeimg" /> */}
         </IconButton>
-        <DialogContent className="modalcontentcookie"> 
-          <p style={{margin:"0"}} className="toptextpopup">Orientator et ses partenaires sélectionnés traitent des données personnelles en lien avec votre navigation sur nos contenus pour les finalités listées ci-dessous.</p>
-          <p style={{margin:"0"}} className="toptextpopup">Pour en savoir plus sur nos pratiques en matière de protection des données personnelles et la façon dont nous utilisons vos données, vous pouvez consulter<Link to="/confidentialite"  target="_blank" className="cookieeLink"> politique de confidentialité</Link></p>
-          
+        <DialogContent className="modalcontentcookie">
+          <p style={{ margin: "0" }} className="toptextpopup">
+            Orientator et ses partenaires sélectionnés traitent des données
+            personnelles en lien avec votre navigation sur nos contenus pour les
+            finalités listées ci-dessous.
+          </p>
+          <p style={{ margin: "0" }} className="toptextpopup">
+            Pour en savoir plus sur nos pratiques en matière de protection des
+            données personnelles et la façon dont nous utilisons vos données,
+            vous pouvez consulter
+            <Link to="/confidentialite" target="_blank" className="cookieeLink">
+              {" "}
+              politique de confidentialité
+            </Link>
+          </p>
         </DialogContent>
         <div className="invitedialogAction">
-          
           <div className="cookieeDiv">
-              <li className="popupli">Fonctionnalités basiques de navigation requises</li>
-              <div>
-              <button className={`${"rejectbtndisabled"}` }
-               disabled>Refuser</button>
-              <button  className={`${"acceptbtnActive"}`} >Accepter</button>
-              </div>
-              </div>
-          {data.map(item=>(
-              <div className="cookieeDiv">
+            <li className="popupli">
+              Fonctionnalités basiques de navigation requises
+            </li>
+            <div>
+              <button className={`${"rejectbtndisabled"}`} disabled>
+                Refuser
+              </button>
+              <button className={`${"acceptbtnActive"}`}>Accepter</button>
+            </div>
+          </div>
+          {data.map((item) => (
+            <div className="cookieeDiv">
               <li className="popupli">{item.text}</li>
               <div>
-              <button className={`${item.refuse?"rejectbtnActive":"rejectbtn"}`}
-              onClick={()=>handleRefuse(item)}>Refuser</button>
-              <button  className={`${item.accept?"acceptbtnActive":"acceptbtn"}`} onClick={()=>handleAccept(item)}>Accepter</button>
+                <button
+                  className={`${item.refuse ? "rejectbtnActive" : "rejectbtn"}`}
+                  onClick={() => handleRefuse(item)}
+                >
+                  Refuser
+                </button>
+                <button
+                  className={`${item.accept ? "acceptbtnActive" : "acceptbtn"}`}
+                  onClick={() => handleAccept(item)}
+                >
+                  Accepter
+                </button>
               </div>
             </div>
           ))}
-<div>
-          <p className="popuptext2">Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, Prévenir la fraude et débogguer, diffuser techniquement les publicités ou le contenu, mettre en correspondance et combiner des sources de données hors ligne, recevoir et utiliser des caractéristiques d’identification d’appareil envoyées automatiquement, et relier différents terminaux.</p>
-        <div className="popupbtndiv">  <button  className="popupsavebtn" onClick={handleSavepopup}>Enregistrer</button></div>
-</div>
+          <div>
+            <p className="popuptext2">
+              Ce site et ses partenaires pourront également réaliser les
+              traitements de données suivants : Assurer la sécurité, Prévenir la
+              fraude et débogguer, diffuser techniquement les publicités ou le
+              contenu, mettre en correspondance et combiner des sources de
+              données hors ligne, recevoir et utiliser des caractéristiques
+              d’identification d’appareil envoyées automatiquement, et relier
+              différents terminaux.
+            </p>
+            <div className="popupbtndiv">
+              {" "}
+              <button className="popupsavebtn" onClick={handleSavepopup}>
+                Enregistrer
+              </button>
+            </div>
+          </div>
         </div>
       </BootstrapDialog>
     </div>

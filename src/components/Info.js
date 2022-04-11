@@ -3,7 +3,6 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 
 export default function Info({ anchorEl, setAnchorEl, text }) {
-  console.log("text in info", text);
   const handleClose = () => {
     setAnchorEl(null);
   };
