@@ -19,10 +19,15 @@
 }
 .cgufont {
   font-weight: 900 !important;
-  font-size: 18px;
+  font-size: 20px;
+  padding: 15px 25px;
+  margin: 10px;
+}
+.MentionsLegal {
 }
 .footercgu {
   margin-top: 26px;
+  padding: 15px;
 }
 .contactformgrid {
   color: white !important;
@@ -109,10 +114,16 @@
   }
   .footercgu {
     margin-right: 10px;
+    margin: 0px;
   }
   .cguDiv {
     width: 100%;
   }
+  .cgufont {
+    font-size: 22px;
+    padding: 20px 30px;
+  }
+
   .footeraccueil {
     margin-left: 10px;
   }

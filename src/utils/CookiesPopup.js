@@ -72,7 +72,6 @@ export default function CookiesPopup({
           onClick={handleClose}
         >
           <HorizontalRuleIcon fontSize="large" />
-          {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontentcookie">
           <p style={{ margin: "0" }} className="toptextpopup">
