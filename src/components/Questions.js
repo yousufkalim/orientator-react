@@ -166,7 +166,6 @@ const Questions = ({ setStep, setActiveStep }) => {
     } else if (facialExpression == 8) {
       return <img src={winkingFinal} className=" winkingFinal" alt="winking" />;
     } else {
-      // return <img src={Dummy} className="dummyimgQuestion forweb" />;
       return <img src={winkingFinal} className=" winkingFinal" alt="winking" />;
     }
   };

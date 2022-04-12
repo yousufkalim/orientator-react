@@ -84,14 +84,14 @@ const TypeOfCourse = ({ type, percentage, courses, result, user }) => {
             style={{ background: `${getPercentageColor(percentage)}` }}
             className="percentageGrid"
           >
-            <img src={search} className="searchimg" />
+            <img src={search} className="searchimg" alt="img" />
             <b style={{ marginTop: "5px" }}>Compatible à {percentage}%</b>
           </Grid>
           <Grid item xs={1} sm={1} className="showhide">
             {showDetail ? (
-              <img src={hide} className="showhideIcon" />
+              <img src={hide} className="showhideIcon" alt="img" />
             ) : (
-              <img src={showhide} className="showhideIcon" />
+              <img src={showhide} className="showhideIcon" alt="img" />
             )}{" "}
           </Grid>
         </Grid>

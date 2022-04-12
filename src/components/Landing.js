@@ -130,7 +130,7 @@ const Landing = ({ step, setStep, statetextforscroll }) => {
         <link rel="preload" as="image" href={f3} />
       </Helmet>
       <div className="main" id="top">
-        <img src={Main} className="bodyimg forweb" />
+        <img src={Main} className="bodyimg forweb" alt="img" />
         <img
           src={MainCharacter}
           alt="Orientator's Mian charachter"

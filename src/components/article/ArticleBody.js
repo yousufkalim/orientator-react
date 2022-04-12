@@ -71,7 +71,7 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
             />
             <meta
               name="keywords"
-              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!"
+              content="ParcourSup,Orientator,Post-bac,études,formation,Orientator te propose une liste de voeux pour ton Parcoursup!,votre,étape,navigation,orientator,pour,comment,vous,une"
             />
           </Helmet>
           <img
@@ -88,50 +88,14 @@ export default function ArticleBody({ singlBlog, loading, blogs }) {
               <div className="articleavatardiv">
                 <img src={Avatar2} className="articleavatar" alt="avatar" />
                 <div className="articlediv2">
-                  <p className="articlep1">
-                    {/* {singlBlog?.blog_author?.name.charAt(0).toUpperCase() +
-                      singlBlog?.blog_author?.name.slice(1)} */}
-                    Orientator
-                  </p>
+                  <p className="articlep1">Orientator</p>
                   {/* <p className="articlep2">May 15・1 min read</p> */}
                   <p className="articlep2">
                     {moment(singlBlog?.createdAt).format("DD/MM/YYYY")}
                   </p>
                 </div>
               </div>
-              {/* <div className="articleavatardiv2">
-                <div className="linediv"></div>
-                <div>
-                  <h3 className="a_h3">
-                    Download {singlBlog?.blog_title} On PC/Laptop For Free
-                    [WINDOWS 10, 8, 8.1, 7]. You Can Download{" "}
-                    {singlBlog?.blog_title} In Windows 10.{" "}
-                    {singlBlog?.blog_title} Download Free.
-                  </h3>
-                </div>
-              </div> */}
             </Grid>
-            {/* <Grid item xs={3} sm={3}>
-              <div className="articleSocialicon">
-                <img
-                  src={TwitterIcon}
-                  className="articlesocialicon"
-                  alt="img"
-                />
-                <img
-                  src={LinkedinIcon}
-                  className="articlesocialicon"
-                  alt="img"
-                />
-                <img src={FbIcon} className="articlesocialicon" alt="img" />
-                <img
-                  src={PintrestIcon}
-                  className="articlesocialicon"
-                  alt="img"
-                />
-                <img src={Dot} className="articlesocialicon" alt="img" />
-              </div>
-            </Grid> */}
           </Grid>
           <div dangerouslySetInnerHTML={htmlfile()} />
           <YouMayLike blogs={blogs} loading={loading} />

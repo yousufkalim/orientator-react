@@ -84,7 +84,6 @@ export default function InviteBox({ open, setOpen }) {
           onClick={handleClose}
         >
           <HorizontalRuleIcon fontSize="large" />
-          {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontent">
           <h3 className="dialogHeading">Invite un ami</h3>

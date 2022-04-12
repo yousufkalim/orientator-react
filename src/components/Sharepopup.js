@@ -48,7 +48,6 @@ export default function InviteBox({ open, setOpen }) {
           onClick={handleClose}
         >
           <HorizontalRuleIcon fontSize="large" />
-          {/* <img src={close} className="closeimg" /> */}
         </IconButton>
         <DialogContent className="modalcontent">
           <h2 className="dialogHeading">Partager sur</h2>

@@ -112,9 +112,10 @@ const Footer = () => {
               >
                 CGU
               </Link>
-              <p style={{ margin: "7px" }} />
+              <p style={{ margin: "20px" }} />
               <Link
                 to="/MentionsLegal"
+                className="MentionsLegal"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 Mentions légales
