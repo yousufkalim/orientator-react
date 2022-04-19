@@ -42,13 +42,14 @@ export function StoreProvider({ children }) {
     screenshoots: [],
     blogs: [],
     singleBlog: {},
+    channelVideos: []
   });
 
   const updateStore = (data) => {
     setStore((prev) => {
       return {
         ...prev,
-        ...data,
+        ...data
       };
     });
   };
@@ -57,7 +58,7 @@ export function StoreProvider({ children }) {
     setStore((prev) => {
       return {
         ...prev,
-        allTypes: [...prev.allTypes, data],
+        allTypes: [...prev.allTypes, data]
       };
     });
   };
