@@ -8,11 +8,13 @@
 @import url("./login.css");
 @import url("./footer.css");
 @import url("./cgu.css");
+@import url("./channel.css");
 @import url("./blog/BlogBody.css");
 @import url("./article/article.css");
 @import url("./blog/LatestArticle.css");
 @import url("./blog/YouMayLike.css");
 @import url("./blog/JoditStyles.css");
+
 body {
   font-family: "lato", sans-serif !important;
   overflow-x: hidden;

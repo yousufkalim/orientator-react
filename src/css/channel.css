@@ -1,0 +1,52 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background:#0c0a25;;
+    
+  }
+  .grid-item {
+    /* background-color: green; */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .videImagechannel {
+    width: 100%;
+  }
+  .channeltextonImg{
+    position:absolute;
+    top:15%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+  }
+  .channeltextimgH1{
+    font-size:2em ;
+    font-weight: 900 !important;
+  }
+  .channelimg{
+    margin-bottom: -4px;
+  }
+  /* for mobile */
+@media only screen and (min-width: 320px) and (max-width: 812px) {
+  .channeltextimgH1{
+    font-size:13px ;
+    
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto ;
+    background:#0c0a25;
+    padding-top: 40px;
+    
+  }
+  .channeltextonImg{
+    position:absolute;
+    top:3%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+  }
+  
+
+}

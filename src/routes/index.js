@@ -19,7 +19,7 @@ const index = () => {
       <Route exact path="/confidentialite" component={Confidential} />
       <Route exact path="/MentionsLegal" component={MentionsLegal} />
       <Route exact path="/blog" component={Blog} />
-      {/* <Route exact path="/channel" component={Videos} /> */}
+      <Route exact path="/channel" component={Videos} />
       <Route exact path="/blog/:id" component={Article} />
       <Route exact path="/*" render={() => <Admin />} />
     </Switch>
