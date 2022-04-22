@@ -33,7 +33,7 @@ export default function BlogBody() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 1,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
@@ -62,7 +62,7 @@ export default function BlogBody() {
           <div className="BlogBodycontainer">
             <img src={BlogBodyimg} className="BlogbodyImage" alt="blogbody" />
             <div className="BlogtextonImg">
-              <h1 className="BlogtextimgH1">NOTRE BLOG</h1>
+              <h1 className="BlogtextimgH1">Le Blog Orientato</h1>
               {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
             </div>
           </div>

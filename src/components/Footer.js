@@ -6,6 +6,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
@@ -42,7 +43,7 @@ const Footer = () => {
                 style={{
                   textDecoration: "none",
                   color: " gray",
-                  margin: "5px",
+                  margin: "5px"
                 }}
               >
                 {" "}
@@ -59,7 +60,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -71,7 +72,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -84,7 +85,7 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
                   }}
                 />
               </a>
@@ -96,7 +97,19 @@ const Footer = () => {
                   style={{
                     padding: "0 9px",
                     cursor: "pointer",
-                    color: "white",
+                    color: "white"
+                  }}
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCPOjsSGMJg3Zwo-RjUoV3oA/videos"
+                target="_blank"
+              >
+                <YouTubeIcon
+                  style={{
+                    padding: "0 9px",
+                    cursor: "pointer",
+                    color: "white"
                   }}
                 />
               </a>

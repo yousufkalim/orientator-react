@@ -24,6 +24,7 @@ export default function BlogBody() {
       { "Access-Control-Allow-Origin": "*", withCredentials: false }
     );
     if (res) {
+      console.log("chanel res", res);
       updateStore({ channelVideos: res?.data?.items });
     }
     setLoading(false);
@@ -45,7 +46,7 @@ export default function BlogBody() {
           alt="blogbody"
         />
         <div className="channeltextonImg">
-          <h1 className="channeltextimgH1">NOTRE CHAÎNE YOUTUBE</h1>
+          <h1 className="channeltextimgH1">La Chaîne Orientator</h1>
         </div>
         <div class="grid-container">
           {loading ? (
