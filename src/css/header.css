@@ -123,6 +123,7 @@
   .showToolbar {
     display: block !important;
     margin: 0px !important;
+    padding-bottom: 15px;
   }
   .title {
     flex-grow: 0.06;
@@ -187,5 +188,11 @@
   .BlogMobileView{
     text-align: center !important;
     width: 100% !important;
+    display: grid;
+    margin-top: -4px !important;
+  }
+  .videoChannel{
+    margin-right: 0px !important;
+    margin-bottom: 8px !important;
   }
 }

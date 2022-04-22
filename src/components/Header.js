@@ -18,15 +18,15 @@ const useStyles = makeStyles((theme) => ({
     // background:"linear-gradient(240deg, #0a0a0f, #000000f0)",
     background: "transparent",
     color: "white",
-    fontFamily: "lato",
-  },
+    fontFamily: "lato"
+  }
 }));
 
 export default function Header({
   step,
   setStep,
   setActiveStep,
-  setStatetextforscroll,
+  setStatetextforscroll
 }) {
   const history = useHistory();
 
@@ -37,13 +37,13 @@ export default function Header({
   const scrollToTop = () => {
     window.scrollTo({
       top: 115,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   const scrollToTopforComment = () => {
     window.scrollTo({
       top: 700,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
   const deviceType = () => {
@@ -101,7 +101,7 @@ export default function Header({
               style={{
                 textDecoration: "none",
                 color: "white",
-                padding: "15px 25px 0 0",
+                padding: "15px 25px 0 0"
               }}
             >
               <Typography
@@ -122,7 +122,7 @@ export default function Header({
               style={{
                 textDecoration: "none",
                 color: "white",
-                padding: "15px 25px 0 0",
+                padding: "15px 25px 0 0"
               }}
             >
               <Typography
@@ -148,11 +148,11 @@ export default function Header({
                 style={{
                   color: "white",
                   textDecoration: "none",
-                  marginRight: "30px",
+                  marginRight: "30px"
                 }}
-                className={flag ? "title c" : "hidetitle c"}
+                className={flag ? "title c videoChannel" : "hidetitle c"}
               >
-                Vidéos
+                La Chaîne
               </Link>
               <Link
                 to="/blog"
