@@ -1,14 +1,22 @@
 .BlogBodycontainer {
   text-align: center;
-  margin-top: 5px;
-  position: relative;
+  /* margin-top: 5px;
+  position: relative; */
   color: white;
+  display: flex;
+  align-items: center;
+  background: #0d0f11;
+}
+.blogimgDiv{
+  width: 50%;
+
 }
 .BlogtextonImg {
-  position: absolute;
+  /* position: absolute;
   top: 47%;
   left: 64%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  width: 50%;
 }
 
 .BlogtextimgH1 {
@@ -23,8 +31,9 @@
 
 .BlogbodyImage {
   /* width: 93%; */
-  width: 100%;
+  width: 65%;
   height: 600px;
+  object-fit: cover;
 }
 /* for mobile */
 @media only screen and (min-width: 320px) and (max-width: 812px) {

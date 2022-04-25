@@ -1,6 +1,7 @@
 // Init
 import React, { useState, useEffect } from "react";
 import BlogBodyimg from "../../assets/img/blogcover2.png";
+import BlogBodyimg1 from "../../assets/blogimg1.png";
 import LatestArticle from "./LatestArticle";
 import YouMayLike from "./YouMayLike";
 import api from "../../api";
@@ -18,12 +19,10 @@ export default function BlogBody() {
   useEffect(() => {
     // get blogs
     getBlogs();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let getBlogs = async () => {
     setLoading(true);
-
     let res = await api("get", "/blogs");
     if (res) {
       updateStore({ blogs: res?.data });
@@ -60,9 +59,16 @@ export default function BlogBody() {
             />
           </Helmet>
           <div className="BlogBodycontainer">
-            <img src={BlogBodyimg} className="BlogbodyImage" alt="blogbody" />
+            <div className="blogimgDiv">
+              <img
+                src={BlogBodyimg1}
+                className="BlogbodyImage"
+                alt="blogbody"
+              />
+            </div>
+
             <div className="BlogtextonImg">
-              <h1 className="BlogtextimgH1">Le Blog Orientato</h1>
+              <h1 className="BlogtextimgH1">Le Blog Orientator</h1>
               {/* <p className="BlogtextonImgP">Tag Line Here</p> */}
             </div>
           </div>
