@@ -1,6 +1,7 @@
 // Init
 import React, { useState, useEffect } from "react";
 import Channel from "../../assets/img/chennel1.png";
+import Channel1 from "../../assets/chanelimg1.png";
 import axios from "axios";
 
 import { Store, UpdateStore } from "../../StoreContext";
@@ -18,13 +19,11 @@ export default function BlogBody() {
 
   let getVideos = async () => {
     setLoading(true);
-
     let res = await axios.get(
       `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_youtubeApiKey}&channelId=${process.env.REACT_APP_channelId}&part=snippet,id&order=date&maxResults=20`,
       { "Access-Control-Allow-Origin": "*", withCredentials: false }
     );
     if (res) {
-      console.log("chanel res", res);
       updateStore({ channelVideos: res?.data?.items });
     }
     setLoading(false);
@@ -35,24 +34,22 @@ export default function BlogBody() {
       behavior: "smooth"
     });
   };
-  console.log("channelVideos", channelVideos);
 
   return (
     <>
-      <div className="BlogBodycontainer">
-        <img
-          src={Channel}
-          className="BlogbodyImage channelimg"
-          alt="blogbody"
-        />
-        <div className="channeltextonImg">
-          <h1 className="channeltextimgH1">La Chaîne Orientator</h1>
+      <div className="channelBodycontainer">
+        <div className="headingchannel">
+          <div className="channelimgdiv">
+            <img src={Channel1} className="channelimg" alt="blogbody" />
+          </div>
+          <div className="channeltextonImg">
+            <h1 className="channeltextimgH1">La Chaîne Orientator</h1>
+          </div>
         </div>
         <div class="grid-container">
           {loading ? (
             <>
-              <div></div>
-              <div>
+              <div style={{ textAlign: "right" }}>
                 <h1>Chargement...</h1>
               </div>
             </>

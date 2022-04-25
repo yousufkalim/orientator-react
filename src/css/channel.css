@@ -1,7 +1,9 @@
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    background:#0c0a25;;
+    grid-template-columns: auto auto;
+    width: 80%;
+    background:#22222c;
+    margin: auto;
     
   }
   .grid-item {
@@ -13,11 +15,22 @@
   .videImagechannel {
     width: 100%;
   }
+  .channelBodycontainer {
+    text-align: center;
+    
+    color: white;
+    align-items: center;
+    background: #22222c;
+  }
+  .headingchannel{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+
+  }
   .channeltextonImg{
-    position:absolute;
-    top:15%;
-    left: 75%;
-    transform: translate(-50%, -50%);
+    
     width: 50%;
 
   }
@@ -27,6 +40,12 @@
   }
   .channelimg{
     margin-bottom: -4px;
+    object-fit: cover;
+    width: 100%;
+  
+  }
+  .channelimgdiv{
+    width: 50%;
   }
   /* for mobile */
 @media only screen and (min-width: 320px) and (max-width: 812px) {
@@ -37,17 +56,9 @@
   .grid-container {
     display: grid;
     grid-template-columns: auto ;
-    background:#0c0a25;
+    background:#22222c;
     padding-top: 40px;
     
   }
-  .channeltextonImg{
-    position:absolute;
-    top:3%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-
-  }
-  
 
 }
