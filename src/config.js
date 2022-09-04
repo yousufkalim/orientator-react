@@ -1,7 +1,7 @@
 let baseUrl = 'http://localhost:5000/api/';
 let url = 'http://localhost:5000/';
-REACT_APP_youtubeApiKey = 'GOOGLE_API_KEY_REDACTED';
-REACT_APP_channelId = 'UCPOjsSGMJg3Zwo-RjUoV3oA';
+let REACT_APP_youtubeApiKey = 'GOOGLE_API_KEY_REDACTED';
+let REACT_APP_channelId = 'UCPOjsSGMJg3Zwo-RjUoV3oA';
 
 if (window.location.host === 'orientator-dev.falconweb.app') {
   baseUrl = 'https://orientator-api-dev.falconweb.app/api/';
